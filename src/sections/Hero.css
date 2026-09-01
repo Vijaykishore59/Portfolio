@@ -1,19 +1,39 @@
+/* ========================================
+   HERO
+======================================== */
+
 .hero {
   position: relative;
+
   min-height: 650px;
+
   display: flex;
   align-items: center;
+
   overflow: hidden;
+
   background: var(--color-surface);
 }
 
+
+/* ========================================
+   HERO INNER
+======================================== */
+
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(380px, 0.85fr);
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(380px, 0.85fr);
+
   align-items: center;
+
   gap: 80px;
+
   min-height: 650px;
 }
+
 
 /* ========================================
    LEFT CONTENT
@@ -21,35 +41,57 @@
 
 .hero__content {
   position: relative;
+
   z-index: 2;
+
   padding: 100px 0;
 }
 
+
 .hero__eyebrow {
   margin-bottom: 22px;
+
   color: var(--color-accent-hover);
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 0.18em;
+
+  line-height: 1.4;
 }
+
 
 .hero__title {
   max-width: 720px;
+
   color: var(--color-text);
+
   font-family: var(--font-display);
+
   font-size: clamp(56px, 6vw, 82px);
+
   font-weight: 400;
+
   line-height: 0.98;
+
   letter-spacing: -0.025em;
 }
 
+
 .hero__description {
   max-width: 470px;
+
   margin-top: 32px;
+
   color: var(--color-text-muted);
+
   font-size: 17px;
+
   line-height: 1.7;
 }
+
 
 /* ========================================
    BUTTONS
@@ -57,84 +99,134 @@
 
 .hero__actions {
   display: flex;
+
   align-items: center;
+
   gap: 16px;
+
   margin-top: 38px;
 }
+
 
 .hero__primary-button,
 .hero__secondary-button {
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 16px;
+
   min-height: 48px;
+
   padding: 0 22px;
+
   border-radius: var(--radius-pill);
+
   font-size: 13px;
+
   font-weight: 600;
-  transition: transform var(--transition-fast),
+
+  white-space: nowrap;
+
+  transition:
+    transform var(--transition-fast),
     background var(--transition-fast),
     border-color var(--transition-fast);
 }
 
+
 .hero__primary-button {
   background: var(--color-accent);
+
   color: var(--color-text);
 }
+
 
 .hero__primary-button:hover {
   background: var(--color-accent-hover);
+
   transform: translateY(-2px);
 }
+
 
 .hero__secondary-button {
   border: 1px solid var(--color-border);
+
   background: transparent;
+
   color: var(--color-text);
 }
 
+
 .hero__secondary-button:hover {
   background: var(--color-surface-soft);
+
   border-color: #bdb5a5;
+
   transform: translateY(-2px);
 }
+
 
 .hero__primary-button span,
 .hero__secondary-button span {
   font-size: 18px;
+
   line-height: 1;
-  transition: transform var(--transition-fast);
+
+  transition:
+    transform var(--transition-fast);
 }
+
 
 .hero__primary-button:hover span,
 .hero__secondary-button:hover span {
   transform: translateX(3px);
 }
 
+
 /* ========================================
    RIGHT PROJECT SECTION
 ======================================== */
 
 .hero__project-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+
   z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
 }
+
 
 .hero__carousel-window {
   width: 100%;
+
   max-width: 430px;
+
   overflow: hidden;
+
   border-radius: var(--radius-lg);
 }
 
+
 .hero__carousel-track {
   display: flex;
-  transition: transform 900ms cubic-bezier(0.76, 0, 0.24, 1);
+
+  width: 100%;
+
+  transition:
+    transform 900ms cubic-bezier(0.76, 0, 0.24, 1);
+
   will-change: transform;
 }
+
 
 /* ========================================
    PROJECT CARD
@@ -142,21 +234,36 @@
 
 .hero__project-card {
   flex: 0 0 100%;
+
   width: 100%;
+
+  min-width: 0;
+
   padding: 32px;
+
   background: rgba(255, 249, 233, 0.85);
+
   border: 1px solid var(--color-border);
+
   border-radius: var(--radius-lg);
+
   box-shadow: var(--shadow-card);
+
   backdrop-filter: blur(8px);
-  transition: transform var(--transition-normal),
+
+  transition:
+    transform var(--transition-normal),
     box-shadow var(--transition-normal);
 }
 
+
 .hero__project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(53, 53, 47, 0.09);
+
+  box-shadow:
+    0 18px 45px rgba(53, 53, 47, 0.09);
 }
+
 
 /* ========================================
    CARD HEADER
@@ -164,51 +271,85 @@
 
 .hero__project-top {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
+  min-height: 20px;
+
   padding-bottom: 22px;
+
   border-bottom: 1px solid var(--color-border);
 }
 
+
 .hero__project-label {
   color: var(--color-accent-hover);
+
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 0.15em;
+
+  line-height: 1.4;
 }
+
 
 .hero__project-index {
   color: var(--color-text-muted);
+
   font-size: 11px;
+
   font-weight: 500;
 }
+
 
 /* ========================================
    PROJECT CONTENT
 ======================================== */
 
 .hero__project-title {
-  margin-top: 20px;
+  margin-top: 24px;
+
   color: var(--color-text);
+
   font-family: var(--font-display);
+
   font-size: 34px;
+
   font-weight: 400;
+
   line-height: 1.1;
+
+  letter-spacing: -0.02em;
+
+  overflow-wrap: break-word;
 }
+
 
 .hero__project-description {
   margin-top: 14px;
+
   color: var(--color-text-muted);
+
   font-size: 14px;
+
   line-height: 1.65;
 }
 
+
 .hero__project-divider {
   width: 100%;
+
   height: 1px;
+
   margin: 24px 0;
+
   background: var(--color-border);
 }
+
 
 /* ========================================
    TECH STACK
@@ -216,19 +357,31 @@
 
 .hero__project-stack {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 8px;
 }
 
+
 .hero__project-stack span {
   padding: 6px 10px;
+
   background: var(--color-surface-soft);
+
   border: 1px solid rgba(207, 200, 184, 0.7);
+
   border-radius: var(--radius-pill);
+
   color: var(--color-text-muted);
+
   font-size: 11px;
+
   font-weight: 500;
+
+  line-height: 1.3;
 }
+
 
 /* ========================================
    STATUS
@@ -236,27 +389,51 @@
 
 .hero__project-status {
   display: flex;
+
   align-items: center;
+
   gap: 8px;
+
   margin-top: 24px;
+
   color: var(--color-text-muted);
+
   font-size: 12px;
+
   font-weight: 500;
 }
 
+
 .hero__status-dot {
+  flex: 0 0 auto;
+
   width: 7px;
+
   height: 7px;
+
   border-radius: 50%;
+
   background: var(--color-accent);
-  box-shadow: 0 0 0 4px rgba(244, 181, 27, 0.12);
-  animation: statusPulse 2.5s ease-in-out infinite;
+
+  box-shadow:
+    0 0 0 4px rgba(244, 181, 27, 0.12);
+
+  animation:
+    statusPulse 2.5s ease-in-out infinite;
 }
 
+
 @keyframes statusPulse {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.45; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
 }
+
 
 /* ========================================
    PROJECT LINK
@@ -264,29 +441,47 @@
 
 .hero__project-link {
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
+
+  width: fit-content;
+
   margin-top: 22px;
+
   color: var(--color-text);
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 0.05em;
+
   text-transform: uppercase;
-  transition: color var(--transition-fast);
+
+  transition:
+    color var(--transition-fast);
 }
+
 
 .hero__project-link:hover {
   color: var(--color-accent-hover);
 }
 
+
 .hero__project-link span {
   font-size: 17px;
-  transition: transform var(--transition-fast);
+
+  transition:
+    transform var(--transition-fast);
 }
+
 
 .hero__project-link:hover span {
   transform: translateX(4px);
 }
+
 
 /* ========================================
    CAROUSEL DOTS
@@ -294,104 +489,448 @@
 
 .hero__carousel-controls {
   display: flex;
+
   align-items: center;
+
+  justify-content: center;
+
   gap: 8px;
+
   margin-top: 22px;
 }
 
+
 .hero__carousel-dot {
   width: 7px;
+
   height: 7px;
+
+  padding: 0;
+
   border: none;
+
   border-radius: 50%;
+
   background: var(--color-border);
+
   cursor: pointer;
-  transition: width 350ms ease,
+
+  transition:
+    width 350ms ease,
     background 350ms ease,
     transform 180ms ease;
 }
+
 
 .hero__carousel-dot:hover {
   transform: scale(1.25);
 }
 
+
 .hero__carousel-dot--active {
   width: 24px;
+
   border-radius: var(--radius-pill);
+
   background: var(--color-accent);
 }
 
+
 /* ========================================
-   RESPONSIVE
+   TABLET
 ======================================== */
 
 @media (max-width: 1000px) {
+
   .hero__inner {
-    grid-template-columns: 1fr 0.9fr;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 0.85fr);
+
     gap: 40px;
   }
 
-  .hero__title {
-    font-size: clamp(52px, 6vw, 68px);
-  }
-}
-
-@media (max-width: 760px) {
-  .hero {
-    min-height: auto;
-  }
-
-  .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    min-height: auto;
-  }
 
   .hero__content {
-    padding: 80px 0 30px;
+    padding: 80px 0;
   }
+
 
   .hero__title {
-    font-size: clamp(46px, 12vw, 64px);
+    font-size: clamp(50px, 6vw, 68px);
   }
 
-  .hero__description {
-    font-size: 16px;
-  }
-
-  .hero__carousel-window {
-    max-width: 100%;
-  }
 
   .hero__project-card {
     padding: 28px;
   }
-
-  .hero__project-wrapper {
-    padding-bottom: 80px;
-  }
 }
 
-@media (max-width: 480px) {
-  .hero__content {
-    padding-top: 60px;
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 760px) {
+
+  /* ----------------------------------------
+     HERO
+  ---------------------------------------- */
+
+  .hero {
+    min-height: auto;
+
+    display: block;
+
+    overflow: hidden;
+
+    background: var(--color-surface);
   }
 
-  .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
+
+  /* ----------------------------------------
+     HERO INNER
+  ---------------------------------------- */
+
+  .hero__inner {
+    display: block;
+
+    width: 100%;
+
+    min-height: auto;
   }
+
+
+  /* ----------------------------------------
+     MOBILE HERO CONTENT
+  ---------------------------------------- */
+
+  .hero__content {
+    width: 100%;
+
+    /*
+      Extra horizontal padding aligns the
+      hero content with the mobile header.
+    */
+    padding: 58px 20px 58px;
+  }
+
+
+  /* ----------------------------------------
+     EYEBROW
+  ---------------------------------------- */
+
+  .hero__eyebrow {
+    margin-bottom: 17px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    line-height: 1.4;
+  }
+
+
+  /* ----------------------------------------
+     TITLE
+  ---------------------------------------- */
+
+  .hero__title {
+    width: 100%;
+
+    max-width: 350px;
+
+    margin: 0;
+
+    font-size: 44px;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.028em;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+  }
+
+
+  /* ----------------------------------------
+     DESCRIPTION
+  ---------------------------------------- */
+
+  .hero__description {
+    width: 100%;
+
+    max-width: 350px;
+
+    margin-top: 23px;
+
+    font-size: 15px;
+
+    line-height: 1.68;
+  }
+
+
+  /* ----------------------------------------
+     MOBILE BUTTONS
+  ---------------------------------------- */
+
+  .hero__actions {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    width: 100%;
+
+    max-width: 350px;
+
+    margin-top: 29px;
+  }
+
 
   .hero__primary-button,
   .hero__secondary-button {
     width: 100%;
+
+    min-width: 0;
+
+    min-height: 47px;
+
+    padding: 0 10px;
+
+    gap: 7px;
+
+    font-size: 11px;
   }
 
-  .hero__project-card {
-    padding: 24px;
+
+  .hero__primary-button span,
+  .hero__secondary-button span {
+    font-size: 16px;
   }
 
-  .hero__project-title {
-    font-size: 30px;
+
+  /* ----------------------------------------
+     HIDE PROJECT CAROUSEL
+  ---------------------------------------- */
+
+  .hero__project-wrapper {
+    display: none;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .hero__content {
+    /*
+      Keeps the content aligned with the
+      header while preserving breathing room.
+    */
+    padding: 52px 20px 52px;
+  }
+
+
+  .hero__eyebrow {
+    margin-bottom: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .hero__title {
+    max-width: 320px;
+
+    font-size: 40px;
+
+    line-height: 0.99;
+
+    letter-spacing: -0.028em;
+  }
+
+
+  .hero__description {
+    max-width: 320px;
+
+    margin-top: 21px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  /* ----------------------------------------
+     BUTTONS STAY SIDE BY SIDE
+  ---------------------------------------- */
+
+  .hero__actions {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: 8px;
+
+    max-width: 320px;
+
+    margin-top: 25px;
+  }
+
+
+  .hero__primary-button,
+  .hero__secondary-button {
+    min-height: 45px;
+
+    padding: 0 8px;
+
+    gap: 6px;
+
+    font-size: 10.5px;
+  }
+
+
+  .hero__primary-button span,
+  .hero__secondary-button span {
+    font-size: 15px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL DEVICES
+======================================== */
+
+@media (max-width: 360px) {
+
+  .hero__content {
+    padding: 48px 18px 48px;
+  }
+
+
+  .hero__eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+  }
+
+
+  .hero__title {
+    max-width: 290px;
+
+    font-size: 37px;
+
+    line-height: 1;
+  }
+
+
+  .hero__description {
+    max-width: 290px;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+
+  .hero__actions {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: 7px;
+
+    max-width: 290px;
+
+    margin-top: 24px;
+  }
+
+
+  .hero__primary-button,
+  .hero__secondary-button {
+    min-height: 43px;
+
+    padding: 0 6px;
+
+    gap: 5px;
+
+    font-size: 10px;
+  }
+
+
+  .hero__primary-button span,
+  .hero__secondary-button span {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   TOUCH DEVICES
+======================================== */
+
+@media (hover: none) {
+
+  .hero__primary-button:hover,
+  .hero__secondary-button:hover,
+  .hero__project-card:hover,
+  .hero__carousel-dot:hover,
+  .hero__project-link:hover {
+    transform: none;
+  }
+
+
+  .hero__primary-button:hover {
+    background: var(--color-accent);
+  }
+
+
+  .hero__secondary-button:hover {
+    background: transparent;
+
+    border-color: var(--color-border);
+  }
+
+
+  .hero__project-link:hover {
+    color: var(--color-text);
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero__carousel-track {
+    transition: none;
+  }
+
+
+  .hero__status-dot {
+    animation: none;
+  }
+
+
+  .hero__primary-button,
+  .hero__secondary-button,
+  .hero__project-card,
+  .hero__project-link,
+  .hero__project-link span,
+  .hero__carousel-dot {
+    transition: none;
   }
 }

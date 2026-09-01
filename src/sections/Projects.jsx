@@ -15,7 +15,7 @@ const projects = [
       'Wikipedia API',
     ],
     type: 'Featured Project',
-    github: '#',
+    github: 'https://github.com/Vijaykishore59/Moviemind',
   },
 
   {
@@ -30,7 +30,7 @@ const projects = [
       'FastAPI',
     ],
     type: 'Railway Reservation Platform',
-    github: '#',
+    github: 'https://github.com/Vijaykishore59/smartrail',
   },
 
   {
@@ -48,7 +48,7 @@ const projects = [
       'XAMPP Server',
     ],
     type: 'ML Research Project',
-    github: '#',
+    github: 'https://github.com/Vijaykishore59/Detecting-Intentional-AIS-Shutdown-in-Open-Sea-Maritime',
   },
 ];
 
@@ -90,191 +90,97 @@ function Projects() {
 
 
         {/* ========================================
-            FEATURED PROJECT — MOVIEMIND
+            PROJECT CARDS
+
+            Desktop:
+            MovieMind remains featured.
+            SmartRail + AIS remain below.
+
+            Mobile:
+            All three projects become one
+            horizontal scrolling row.
         ======================================== */}
 
-        <article className="project-featured">
+        <div className="projects__cards">
+
 
           {/* ========================================
-              PROJECT INFORMATION
+              PROJECT 01 — MOVIEMIND
           ======================================== */}
 
-          <div className="project-featured__content">
+          <article className="project-featured">
 
-            <div className="project-featured__label">
-              {projects[0].type}
-            </div>
+            <div className="project-featured__content">
 
+              {/* PROJECT TYPE */}
 
-            <h3 className="project-featured__title">
-              {projects[0].title}
-            </h3>
-
-
-            <p className="project-featured__description">
-              {projects[0].description}
-            </p>
-
-
-            {/* ========================================
-                PROJECT META
-            ======================================== */}
-
-            <div className="project-featured__meta">
-
-              {/* Role */}
-
-              <div className="project-meta">
-
-                <span className="project-meta__label">
-                  ROLE
-                </span>
-
-                <span className="project-meta__value">
-                  {projects[0].role}
-                </span>
-
+              <div className="project-featured__label">
+                {projects[0].type}
               </div>
 
 
-              {/* Stack */}
+              {/* PROJECT TITLE */}
 
-              <div className="project-meta">
+              <h3 className="project-featured__title">
+                {projects[0].title}
+              </h3>
 
-                <span className="project-meta__label">
-                  STACK
-                </span>
 
-                <div className="project-meta__stack">
+              {/* PROJECT DESCRIPTION */}
 
-                  {projects[0].stack.map((technology) => (
-                    <span key={technology}>
-                      {technology}
-                    </span>
-                  ))}
+              <p className="project-featured__description">
+                {projects[0].description}
+              </p>
+
+
+              {/* PROJECT META */}
+
+              <div className="project-featured__meta">
+
+                {/* ROLE */}
+
+                <div className="project-meta">
+
+                  <span className="project-meta__label">
+                    ROLE
+                  </span>
+
+                  <span className="project-meta__value">
+                    {projects[0].role}
+                  </span>
+
+                </div>
+
+
+                {/* STACK */}
+
+                <div className="project-meta">
+
+                  <span className="project-meta__label">
+                    STACK
+                  </span>
+
+                  <div className="project-meta__stack">
+
+                    {projects[0].stack.map((technology) => (
+                      <span key={technology}>
+                        {technology}
+                      </span>
+                    ))}
+
+                  </div>
 
                 </div>
 
               </div>
 
-            </div>
 
+              {/* GITHUB */}
 
-            {/* ========================================
-                GITHUB
-            ======================================== */}
-
-            <div className="project-featured__actions">
-
-              <a
-                href={projects[0].github}
-                className="project-github-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-                <span>↗</span>
-              </a>
-
-            </div>
-
-          </div>
-
-
-          {/* ========================================
-              MOVIEMIND TICKET
-          ======================================== */}
-
-          <div className="project-featured__visual">
-
-            <div className="project-ticket">
-
-              <img
-                src={`${import.meta.env.BASE_URL}images/moviemind-ticket.png`}
-                alt="MovieMind generated movie ticket"
-                className="project-ticket__image"
-              />
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        {/* ========================================
-            OTHER PROJECTS
-        ======================================== */}
-
-        <div className="projects__grid">
-
-          {projects.slice(1).map((project) => (
-
-            <article
-              className="project-small"
-              key={project.id}
-            >
-
-              {/* ========================================
-                  PROJECT HEADER
-              ======================================== */}
-
-              <div className="project-small__top">
-
-                <span>
-                  {project.id}
-                </span>
-
-                <span>
-                  {project.type}
-                </span>
-
-              </div>
-
-
-              {/* ========================================
-                  PROJECT TITLE
-              ======================================== */}
-
-              <h3 className="project-small__title">
-                {project.title}
-              </h3>
-
-
-              {/* ========================================
-                  PROJECT DESCRIPTION
-              ======================================== */}
-
-              <p className="project-small__description">
-                {project.description}
-              </p>
-
-
-              {/* ========================================
-                  PROJECT STACK
-              ======================================== */}
-
-              <div className="project-small__stack">
-
-                {project.stack.map((technology) => (
-
-                  <span key={technology}>
-                    {technology}
-                  </span>
-
-                ))}
-
-              </div>
-
-
-              {/* ========================================
-                  GITHUB
-              ======================================== */}
-
-              <div className="project-small__actions">
+              <div className="project-featured__actions">
 
                 <a
-                  href={project.github}
+                  href={projects[0].github}
                   className="project-github-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -285,9 +191,137 @@ function Projects() {
 
               </div>
 
-            </article>
+            </div>
 
-          ))}
+
+            {/* MOVIEMIND VISUAL */}
+
+            <div className="project-featured__visual">
+
+              <div className="project-ticket">
+
+                <img
+                  src={`${import.meta.env.BASE_URL}images/moviemind-ticket.png`}
+                  alt="MovieMind generated movie ticket"
+                  className="project-ticket__image"
+                />
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          {/* ========================================
+              PROJECT 02 + PROJECT 03
+          ======================================== */}
+
+          <div className="projects__grid">
+
+            {projects.slice(1).map((project) => (
+
+              <article
+                className="project-small"
+                key={project.id}
+              >
+
+                {/* PROJECT HEADER */}
+
+                <div className="project-small__top">
+
+                  <span>
+                    {project.id}
+                  </span>
+
+                  <span>
+                    {project.type}
+                  </span>
+
+                </div>
+
+
+                {/* PROJECT TITLE */}
+
+                <h3 className="project-small__title">
+                  {project.title}
+                </h3>
+
+
+                {/* PROJECT DESCRIPTION */}
+
+                <p className="project-small__description">
+                  {project.description}
+                </p>
+
+
+                {/* ==================================
+                    PROJECT META
+
+                    Same clean structure as MovieMind
+                ================================== */}
+
+                <div className="project-small__meta">
+
+                  {/* ROLE */}
+
+                  <div className="project-meta">
+
+                    <span className="project-meta__label">
+                      ROLE
+                    </span>
+
+                    <span className="project-meta__value">
+                      {project.role}
+                    </span>
+
+                  </div>
+
+
+                  {/* STACK */}
+
+                  <div className="project-meta">
+
+                    <span className="project-meta__label">
+                      STACK
+                    </span>
+
+                    <div className="project-meta__stack">
+
+                      {project.stack.map((technology) => (
+                        <span key={technology}>
+                          {technology}
+                        </span>
+                      ))}
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                {/* GITHUB */}
+
+                <div className="project-small__actions">
+
+                  <a
+                    href={project.github}
+                    className="project-github-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                    <span>↗</span>
+                  </a>
+
+                </div>
+
+              </article>
+
+            ))}
+
+          </div>
 
         </div>
 

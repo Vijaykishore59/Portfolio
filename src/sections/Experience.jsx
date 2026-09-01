@@ -6,30 +6,37 @@ const internships = [
     year: '2026',
     title: 'POWER BI INTERN',
     category: 'Data Visualization & Business Intelligence',
+    company: 'CSC India',
     description:
-      'Worked with data visualization, dashboards and analytical reporting.',
+      'Worked on data visualization and business intelligence using Power BI, creating interactive dashboards, reports and meaningful visual insights from structured data.',
   },
+
   {
     number: '02',
     year: '2025',
     title: 'UI / UX DESIGNER INTERN',
     category: 'Interface & User Experience Design',
+    company: 'CSC India',
     description:
-      'Focused on interface design, user experience and creating clean digital experiences.',
+      'Worked on user interface and experience design, focusing on clean layouts, usability, visual consistency and creating intuitive digital experiences for users.',
   },
+
   {
     number: '03',
     year: '2024',
     title: 'SDE INTERN',
     category: 'Software Development',
+    company: 'Bluestock Fintech',
     description:
-      'Gained practical experience in software development and building applications.',
+      'Gained practical software development experience by working on application development, implementing features and understanding real-world development workflows.',
   },
 ];
+
 
 function Experience() {
   return (
     <section className="experience" id="experience">
+
       <div className="container">
 
         {/* ========================================
@@ -58,10 +65,15 @@ function Experience() {
         <div className="experience__grid">
 
           {internships.map((internship) => (
+
             <article
               className="experience__card"
               key={internship.number}
             >
+
+              {/* ========================================
+                  CARD TOP
+              ======================================== */}
 
               <div className="experience__top">
 
@@ -76,15 +88,30 @@ function Experience() {
               </div>
 
 
+              {/* ========================================
+                  CARD CONTENT
+              ======================================== */}
+
               <div className="experience__content">
 
                 <h3 className="experience__role">
                   {internship.title}
                 </h3>
 
+
                 <p className="experience__category">
                   {internship.category}
                 </p>
+
+
+                {/* Company */}
+
+                <p className="experience__company">
+                  {internship.company}
+                </p>
+
+
+                {/* Description */}
 
                 <p className="experience__description">
                   {internship.description}
@@ -93,6 +120,7 @@ function Experience() {
               </div>
 
             </article>
+
           ))}
 
         </div>
@@ -102,7 +130,11 @@ function Experience() {
             BOTTOM TRANSITION
         ======================================== */}
 
-        <div className="experience__transition">
+        <a
+          href="#contact"
+          className="experience__transition"
+          aria-label="Go to contact section"
+        >
 
           <span className="experience__line" />
 
@@ -114,11 +146,13 @@ function Experience() {
             ↓
           </span>
 
-        </div>
+        </a>
 
       </div>
+
     </section>
   );
 }
+
 
 export default Experience;
