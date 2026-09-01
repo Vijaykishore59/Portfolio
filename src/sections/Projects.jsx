@@ -190,7 +190,7 @@ function Projects() {
             <div className="project-ticket">
 
               <img
-                src="/images/moviemind-ticket.png"
+                src={`${import.meta.env.BASE_URL}images/moviemind-ticket.png`}
                 alt="MovieMind generated movie ticket"
                 className="project-ticket__image"
               />
