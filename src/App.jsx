@@ -1,11 +1,5 @@
 import './App.css';
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom';
-
 import Navbar from './components/Navbar';
 
 import Hero from './sections/Hero';
@@ -15,44 +9,27 @@ import Skills from './sections/Skills';
 import Experience from './sections/Experience';
 import Contact from './sections/Contact';
 
-import ProjectsPage from './pages/ProjectsPage';
-
-function HomePage() {
+function App() {
   return (
-    <>
+    <div className="app">
+
       <Navbar />
 
       <main>
         <Hero />
+
         <Projects />
+
         <About />
+
         <Skills />
+
         <Experience />
+
         <Contact />
       </main>
-    </>
-  );
-}
 
-function App() {
-  return (
-    <BrowserRouter>
-
-      <Routes>
-
-        <Route
-          path="/"
-          element={<HomePage />}
-        />
-
-        <Route
-          path="/projects"
-          element={<ProjectsPage />}
-        />
-
-      </Routes>
-
-    </BrowserRouter>
+    </div>
   );
 }
 
